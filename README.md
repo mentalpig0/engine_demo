@@ -58,3 +58,104 @@ sudo pacman -S base-devel cmake glfw-x11 glm
 
 # macOS
 brew install glfw glm
+Compilation
+bash
+mkdir build && cd build
+cmake ..
+make -j$(nproc)
+./main
+CMake Options
+bash
+# Debug build with symbols
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+
+# Release build with optimizations
+cmake -DCMAKE_BUILD_TYPE=Release ..
+🎮 Controls
+Key	Action
+WASD	Move forward/left/backward/right
+Mouse	Look around
+Space	Move up
+Left Shift	Move down
+ESC	Exit application
+🔄 Development Roadmap
+Phase 1: Current (Complete)
+Basic OpenGL renderer
+
+Camera system with FPS controls
+
+Sphere rendering with vertex sharing
+
+Shader pipeline setup
+
+Phase 2: Physics Implementation
+Broad-phase collision detection (BVH)
+
+Narrow-phase collision (GJK/EPA)
+
+Constraint solving (Sequential impulses)
+
+Rigid body dynamics
+
+Phase 3: Vulkan Backend
+Vulkan renderer abstraction
+
+Shared physics core library
+
+Compute shader physics
+
+Performance benchmarking
+
+Phase 4: Advanced Features
+Particle systems
+
+Soft body dynamics
+
+Fluid simulation
+
+Multi-threaded physics
+
+📈 Performance Metrics
+Component	Current	Target
+Rendering	370 FPS	500+ FPS
+Physics Steps	N/A	60 Hz fixed
+Object Count	7 spheres	1,000+ bodies
+Collision Pairs	N/A	10,000+/frame
+🧪 Testing
+bash
+# Run with different sphere counts
+./main --spheres 50
+./main --spheres 100
+./main --benchmark  # Performance test mode
+
+# Profile with perf (Linux)
+perf record ./main
+perf report
+🤝 Contributing
+Fork the repository
+
+Create feature branch (git checkout -b feature/amazing-feature)
+
+Commit changes (git commit -m 'Add amazing feature')
+
+Push to branch (git push origin feature/amazing-feature)
+
+Open Pull Request
+
+📚 Learning Resources
+Learn OpenGL
+
+OpenGL Programming Guide (Red Book)
+
+GLM Documentation
+
+Game Physics Engine Development
+
+⚠️ Known Issues
+Fixed window size (1000x1000)
+
+No aspect ratio correction on resize
+
+Basic lighting missing
+
+No texture support
