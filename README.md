@@ -26,3 +26,35 @@ A real-time 3D physics engine demonstration with OpenGL rendering, featuring sph
 - **Shader Language**: GLSL 330 core
 
 ## 📁 Project Structure
+openGL/
+├── CMakeLists.txt # Build configuration
+├── renderer/ # OpenGL renderer abstraction
+│ ├── renderer.h # Renderer interface
+│ └── renderer.cpp # OpenGL implementation
+├── src/
+│ ├── core/ # Core systems
+│ │ ├── camera.h/cpp # First-person camera
+│ │ └── shader.h/cpp # Shader management
+│ └── glad.c # OpenGL loader
+├── include/ # Third-party headers
+│ ├── glad/ # OpenGL function pointers
+│ └── KHR/ # Khronos platform definitions
+├── shaders/ # GLSL shaders
+│ ├── 6.3.coordinate_systems.vs # Vertex shader
+│ └── 6.3.coordinate_systems.fs # Fragment shader
+└── assets/ # Models, textures (future)
+
+text
+
+## 🔧 Build Instructions
+
+### **Prerequisites**
+```bash
+# Ubuntu/Debian
+sudo apt install build-essential cmake libglfw3-dev libglm-dev
+
+# Arch Linux
+sudo pacman -S base-devel cmake glfw-x11 glm
+
+# macOS
+brew install glfw glm
